@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Abhay Upadhyay | IIT Mandi</title>
 
-<!-- Icons -->
+<!-- Font Awesome for icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <!-- Three.js CDN -->
@@ -21,15 +21,23 @@
   --muted:#94a3b8;
 }
 *{margin:0;padding:0;box-sizing:border-box;font-family:Inter,Segoe UI,sans-serif;scroll-behavior:smooth;}
-body{background:#05070f;color:var(--text);overflow-x:hidden;}
+body{background:var(--bg);color:var(--text);overflow-x:hidden;}
 
 /* Cursor Glow */
 .cursor{position:fixed;width:18px;height:18px;border-radius:50%;background:var(--accent);pointer-events:none;mix-blend-mode:screen;filter:blur(8px);z-index:9999;}
 
-/* NAV */
-nav{position:fixed;top:0;width:100%;backdrop-filter:blur(16px);background:rgba(5,7,15,0.7);display:flex;justify-content:center;gap:26px;padding:16px;z-index:1000;}
-nav a{color:var(--muted);text-decoration:none;font-weight:600;position:relative;}
-nav a::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent2));transition:.3s;}
+/* Navigation */
+nav{
+  position:fixed;top:0;width:100%;backdrop-filter:blur(16px);
+  background:rgba(5,7,15,0.7);display:flex;justify-content:center;gap:26px;padding:16px;z-index:1000;
+}
+nav a{
+  color:var(--muted);text-decoration:none;font-weight:600;position:relative;
+}
+nav a::after{
+  content:"";position:absolute;left:0;bottom:-6px;width:0;height:2px;
+  background:linear-gradient(90deg,var(--accent),var(--accent2));transition:.3s;
+}
 nav a:hover{color:white;} nav a:hover::after{width:100%;}
 
 /* Hero */
@@ -44,19 +52,18 @@ header p{margin-top:14px;color:var(--muted);font-size:1.05rem;}
 
 /* Best Scholar Banner */
 #scholar-banner{
-  position:absolute;
-  top:30px;
-  left:50%;
-  transform:translateX(-50%);
-  font-size:1.8rem;
-  font-weight:800;
+  position:absolute;top:30px;left:50%;transform:translateX(-50%);
+  font-size:1.8rem;font-weight:800;
   background:linear-gradient(120deg,#00f0ff,#8b5cf6,#00f0ff);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
   text-shadow:0 0 20px rgba(0,240,255,0.5),0 0 40px rgba(139,92,246,0.5);
   animation:bannerGlow 2s ease-in-out infinite alternate;
 }
-@keyframes bannerGlow{0%{text-shadow:0 0 20px rgba(0,240,255,0.5);}50%{text-shadow:0 0 40px rgba(0,240,255,0.7);}100%{text-shadow:0 0 20px rgba(139,92,246,0.5);}}
+@keyframes bannerGlow{
+  0%{text-shadow:0 0 20px rgba(0,240,255,.5);}
+  50%{text-shadow:0 0 40px rgba(0,240,255,.7);}
+  100%{text-shadow:0 0 20px rgba(139,92,246,.5);}
+}
 
 /* Sections */
 section{padding:100px 12%;}
@@ -129,7 +136,7 @@ canvas{position:fixed;top:0;left:0;z-index:-2;}
 <section id="research">
   <h2 class="title">Research Interest</h2>
   <div class="grid">
-    <div class="card"><i class="fa-solid fa-satellite-dish"></i><h3>6G & Communication</h3><p>Next-generation wireless systems, ultra-reliable communication, and future 6G networks.</p></div>
+    <div class="card"><i class="fa-solid fa-satellite-dish"></i><h3>6G & Communication</h3><p>Next-gen wireless systems, ultra-reliable communication, and future 6G networks.</p></div>
   </div>
 </section>
 
@@ -176,7 +183,7 @@ document.querySelectorAll('.card').forEach(card=>{
   card.addEventListener('mouseleave',()=>{card.style.setProperty('--tiltX','0deg');card.style.setProperty('--tiltY','0deg');});
 });
 
-/* ===== THREE.JS PARTICLE 6G BACKGROUND ===== */
+/* Three.js 6G Particle Background */
 let scene=new THREE.Scene();
 let camera=new THREE.PerspectiveCamera(75,window.innerWidth/window.innerHeight,0.1,2000);
 camera.position.z=600;
@@ -227,4 +234,4 @@ animate();
 </script>
 
 </body>
-                                                                                                              </html>
+</html>
