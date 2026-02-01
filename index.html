@@ -47,14 +47,14 @@
   to{transform:rotate(360deg);}
 }
 /* ===================== ROOT ===================== */
-:root{
-  --bg:#05080f;
-  --card:#0c1220;
-  --accent:#00f0ff;
-  --accent2:#7c7cff;
-  --text:#eaeaff;
-  --muted:#9aa0c7;
-  --glass:rgba(255,255,255,0.06);
+  :root{
+  --bg:#f4f7ff;
+  --card:#ffffff;
+  --accent:#2563eb;
+  --accent2:#22c55e;
+  --text:#0f172a;
+  --muted:#475569;
+  --glass:rgba(255,255,255,0.65);
 }
 
 /* ===================== RESET ===================== */
@@ -67,12 +67,11 @@
 }
 
 /* ===================== BODY ===================== */
-body{
-  background:radial-gradient(circle at top, #0b1330, var(--bg));
-  color:var(--text);
-  overflow-x:hidden;
-}
-
+  @keyframes bgMove{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+  }
 /* ===================== PARTICLE BG ===================== */
 canvas{
   position:fixed;
@@ -249,7 +248,29 @@ footer a{
   color:var(--accent);
   text-decoration:none;
 }
+section{
+  animation:floatIn 1s ease both;
+}
 
+@keyframes floatIn{
+  from{
+    opacity:0;
+    transform:translateY(40px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+.card{
+  animation:cardFloat 6s ease-in-out infinite;
+}
+
+@keyframes cardFloat{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-8px)}
+}
 /* ===================== RESPONSIVE ===================== */
 @media(max-width:600px){
   .hero h1{font-size:2.4rem;}
