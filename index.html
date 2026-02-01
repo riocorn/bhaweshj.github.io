@@ -111,7 +111,71 @@ header{
   font-size:1.1rem;
   color:var(--muted);
 }
+  
+<div class="hero-actions">
+  <a href="#research" class="btn primary">Research</a>
+  <a href="#contact" class="btn secondary">Contact</a>
+</div>
 
+  .hero-actions{
+  margin-top:30px;
+  display:flex;
+  gap:18px;
+  justify-content:center;
+}
+
+.btn{
+  padding:12px 26px;
+  border-radius:30px;
+  font-weight:700;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+.btn.primary{
+  background:linear-gradient(120deg,var(--accent),var(--accent2));
+  color:white;
+}
+
+.btn.secondary{
+  border:2px solid var(--accent);
+  color:var(--accent);
+}
+
+.btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 12px 25px rgba(37,99,235,0.3);
+}
+
+  .hero-actions{
+  margin-top:30px;
+  display:flex;
+  gap:18px;
+  justify-content:center;
+}
+
+.btn{
+  padding:12px 26px;
+  border-radius:30px;
+  font-weight:700;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+.btn.primary{
+  background:linear-gradient(120deg,var(--accent),var(--accent2));
+  color:white;
+}
+
+.btn.secondary{
+  border:2px solid var(--accent);
+  color:var(--accent);
+}
+
+.btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 12px 25px rgba(37,99,235,0.3);
+}
 /* ===================== NAV ===================== */
 nav{
   position:fixed;
@@ -419,6 +483,16 @@ section{
 <section id="contact">
   <h2 class="section-title">Contact</h2>
   <div class="cards">
+
+    <div class="card">
+      <h3>Email</h3>
+      <p>
+        <a href="mailto:DD25016@students.iitmandi.ac.in">
+          DD25016@students.iitmandi.ac.in
+        </a>
+      </p>
+    </div>
+
     <div class="card">
       <h3>LinkedIn</h3>
       <p>
@@ -427,6 +501,7 @@ section{
         </a>
       </p>
     </div>
+
   </div>
 </section>
 
